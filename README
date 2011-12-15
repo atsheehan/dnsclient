@@ -1,0 +1,12 @@
+This is a simple DNS client written for a networking course. Run "make" to build the application.
+
+Usage: ./dnsclient [-t <timeout>] [-i <max-retries>] [-p <port>] [-ns|-mx] @<server> <name>
+
+-t <timeout>       the max time to wait in seconds for a server to respond
+-i <max-retries>   the number of times to retry a request after a failure
+-p <port>          the port to connect to the DNS server
+-ns                returns a list of name server records
+-mx                returns a list of mail exchange records
+@server            the IP address of the DNS server
+name               the domain name to resolve
+
