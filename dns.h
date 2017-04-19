@@ -21,9 +21,11 @@
 #define DNS_NS_RECORD		0x0002
 #define DNS_CNAME_RECORD	0x0005
 #define DNS_MX_RECORD		0x000f
+#define DNS_TXT_RECORD		0x0010
 
 /* Specified in the RFC for DNS. */
 #define MAX_DOMAIN_LENGTH	255
+#define MAX_TXT_LENGTH	255
 #define MAX_SUBDOMAIN_LENGTH    63
 #define ERROR_BUFFER 100
 
@@ -51,6 +53,7 @@ struct dns_response {
   uint32_t ip_address; /* A only. */
   char name[MAX_DOMAIN_LENGTH + 1]; /* CNAME, MX, and NS only. */
   uint8_t authoritative; /* All. 0 false, 1 true. */
+  char txt[MAX_TXT_LENGTH + 1];
 };
 
 #endif /* DNS_H */
